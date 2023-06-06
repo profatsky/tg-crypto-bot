@@ -1,23 +1,38 @@
-<h1>tg-exchange-rate</h1>
-<hr>
-<h2>Описание</h2>
-<p>Телеграм бот, демонстрирующий график изменения стоимости криптовалют.</p>
+# tg-exchange-rate
+
+Telegram бот для просмотра изменения цен криптовалюты за указанный период
+
+## Функционал:
 Доступны 3 команды:
-<ul>
-    <li>/d (/day) - изменение цены за день</li>
-    <li>/w (/week) - изменение цены за неделю</li>
-    <li>/m (/month) - изменение цены за месяц</li>
-</ul>
-<img src="assets/gifs/rate.gif">
+* /d (/day) - изменение цены за день
+* /w (/week) - изменение цены за неделю
+* /m (/month) - изменение цены за месяц
 
-<h2>Настройка и установка</h2>
+![demo](app/assets/gifs/rate.gif)
 
+## Инструкция по настройке и установке
+### Настройка виртуального окружения и установка зависимостей
 ```
-$ git clone https://github.com/profatsky/tg-exchange-rate.git
+$ python -m venv venv
 
-$ cd tg-exchange-rate
+$ venv\Scripts\activate.bat - для Windows
 
-$ python3 -m pip install -r requirements.txt
+$ source venv/bin/activate - для Linux и MacOS
+
+$ python -m pip install -r requirements.txt
 ```
-После клонирования репозитория переименуйте файл .env.example в .env и укажите необходимые
-значения: токен бота и id администратора.
+
+### Конфиг
+Переименуйте файл .env.example в .env и укажите в нем токен бота и ваш ID в Telegram
+```
+TOKEN = токен бота
+
+ADMIN_ID = ID администратора
+```
+
+### Запуск
+```
+$ cd app
+
+$ python bot.py
+```
