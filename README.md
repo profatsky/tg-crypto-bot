@@ -18,28 +18,29 @@ ADMIN_ID = ID администратора
 ```
 
 ## Запуск с использованием Docker-контейнера
-* Создание Docker-образа
-    ```
-    docker build -t crypto-bot .
-    ```
-* Запуск Docker-контейнера
-    ```
-    docker run -d --restart=always crypto-bot
-    ```
+Создание Docker-образа
+```
+docker build -t crypto-bot .
+```
+
+Запуск Docker-контейнера
+```
+docker run -d --restart=always crypto-bot
+```
 
 ## Настройка и запуск вручную
-* Настройка виртуального окружения и установка зависимостей
-    ```
-    python -m venv venv
+Настройка виртуального окружения и установка зависимостей
+```
+python -m venv venv
   
-    venv\Scripts\activate.bat - для Windows
+venv\Scripts\activate.bat - для Windows
 
-    source venv/bin/activate - для Linux и MacOS
+source venv/bin/activate - для Linux и MacOS
   
-    python -m pip install -r requirements.txt
-    ```
+python -m pip install -r requirements.txt
+```
 
-* Запуск
-    ```
-    python app/bot.py
-    ```
+Запуск
+```
+python app/bot.py
+```
