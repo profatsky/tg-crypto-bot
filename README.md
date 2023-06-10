@@ -10,29 +10,36 @@ Telegram бот для просмотра изменения цен крипто
 
 ![demo](app/assets/gifs/rate.gif)
 
-## Инструкция по настройке и установке
-### Настройка виртуального окружения и установка зависимостей
-```
-$ python -m venv venv
-
-$ venv\Scripts\activate.bat - для Windows
-
-$ source venv/bin/activate - для Linux и MacOS
-
-$ python -m pip install -r requirements.txt
-```
-
-### Конфиг
+## Настройка конфига
 Переименуйте файл .env.example в .env и укажите в нем токен бота и ваш ID в Telegram
 ```
 TOKEN = токен бота
-
 ADMIN_ID = ID администратора
 ```
 
-### Запуск
-```
-$ cd app
+## Запуск с использованием Docker-контейнера
+* Создание Docker-образа
+    ```
+    docker build -t crypto-bot .
+    ```
+* Запуск Docker-контейнера
+    ```
+    docker run -d --restart=always crypto-bot
+    ```
 
-$ python bot.py
-```
+## Настройка и запуск вручную
+* Настройка виртуального окружения и установка зависимостей
+    ```
+    python -m venv venv
+  
+    venv\Scripts\activate.bat - для Windows
+
+    source venv/bin/activate - для Linux и MacOS
+  
+    python -m pip install -r requirements.txt
+    ```
+
+* Запуск
+    ```
+    python app/bot.py
+    ```
