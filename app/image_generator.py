@@ -1,14 +1,17 @@
 import datetime
 import os.path
 from io import BytesIO
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import Figure
 from PIL import Image, ImageFont, ImageDraw
 
+from config import BASE_DIR
+
 
 class ImageGenerator:
-    ASSETS_PATH = "assets"
+    ASSETS_PATH = Path(BASE_DIR, "assets")
 
     @staticmethod
     def convert_img_to_bytesio(img: Image) -> BytesIO:
