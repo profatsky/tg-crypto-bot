@@ -42,5 +42,5 @@ python -m pip install -r requirements.txt
 
 Запуск
 ```
-python app/bot.py
+python app/main.py
 ```

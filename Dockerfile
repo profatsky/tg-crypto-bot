@@ -7,4 +7,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD ["python", "app/bot.py"]
+CMD ["python", "app/main.py"]

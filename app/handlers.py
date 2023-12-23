@@ -4,6 +4,7 @@ from aiogram import Dispatcher
 from aiogram.types import Message
 from aiogram.dispatcher.filters import CommandStart
 
+from utils import run_func_in_process
 from loader import exchange_requests, image_generator
 
 
@@ -33,7 +34,11 @@ async def send_coins_info(message: Message, days: int = 30):
     if not coins_data:
         return await message.answer("❗ Некорректный ввод")
 
-    img = image_generator.create_image_with_cryptocurrency_rate(coins_data, days=days)
+    img = await run_func_in_process(
+        image_generator.create_image_with_cryptocurrency_rate,
+        coins_data,
+        days
+    )
     await message.answer_photo(photo=img)
 
 
